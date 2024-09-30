@@ -11,5 +11,5 @@ public class BAI1 {
 			S=S+i;
 		}
 		System.out.println(S);
-	}
+	}//
 }
