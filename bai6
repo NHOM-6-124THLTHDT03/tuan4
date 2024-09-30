@@ -1,0 +1,38 @@
+
+import java.util.Scanner;
+
+public class KiemTraSoDoiXung {
+
+    // Hàm kiểm tra số đối xứng
+    public static boolean isPalindrome(int n) {
+        int originalNumber = n;
+        int reverse = 0;
+
+        // Đảo ngược số n
+        while (n > 0) {
+            int remainder = n % 10;
+            reverse = reverse * 10 + remainder;
+            n = n / 10;
+        }
+
+        // Kiểm tra nếu số ban đầu bằng số đảo ngược
+        return originalNumber == reverse;
+    }
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Nhập một số nguyên từ người dùng
+        System.out.print("Nhập vào một số nguyên: ");
+        int number = scanner.nextInt();
+
+        // Kiểm tra số đó có phải là số đối xứng hay không
+        if (isPalindrome(number)) {
+            System.out.println(number + " là số đối xứng.");
+        } else {
+            System.out.println(number + " không phải là số đối xứng.");
+        }
+
+        scanner.close();
+    }
+}
